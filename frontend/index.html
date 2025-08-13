@@ -145,6 +145,60 @@
                 </div>
             </righthome>
             <mainhome>
+ 
+                                    <!-- //+++++++<<<<<<<
+                                    THIS FORM WE INSERT DATA TO MYSQL
+                                        >>>>>+++++++++\\ -->
+                <div class="btn-post" id="btn-post">
+                    <div class="imge-input-post" style="display: flex;">
+                      <img src="uploads/my picture graduated.jpg" alt="error image" width="40px" height="40px" style="border-radius: 50%;">
+                      <button style="width: 100%; border: none; border-radius: 10px; margin-top: 5px;" id="btn-post-popup">
+                        What's on your mind, user?
+                    </button>
+                    </div>
+                    <div class="post-icon" style="width: 100%; padding: 10px;">
+                        <ul class="ul-post" style="display: flex; justify-content: space-around; list-style: none; font-size:1.rem; color: #777; cursor: pointer;">
+                            <li>
+                                <span>
+                                    <i class="fa-solid fa-video" style="color: rgb(206, 43, 31);"></i>
+                                    Live video
+                                </span>
+                            </li>
+                            <li>
+                                <span>
+                                    <i class="fa-solid fa-image" style="color: #34eb74;"></i>
+                                    Photo/image
+                                </span>
+                            </li>
+                             <li>
+                                <span>
+                                    <i class="fa-solid fa-film" style="color: rgb(243, 95, 119);"></i>
+                                    Reel
+                                </span>
+                             </li>
+                        </ul>
+                    </div>
+                </div>
+
+                <div class="post" id="post">
+                    <span class="btn-post-close" id="btn-post-close">
+                        <i class="fa-solid fa-xmark"></i>
+                    </span>
+                    <div class="post-wrapper">
+                        <form action="" method="POST" enctype="multipart/form-data">
+                           <input type="text" name="title" placeholder="Enter Title" id="title">
+                           <textarea name="category" id="category">
+                        
+                           </textarea>
+                           <label for="file"> 
+                             <i class="fa-solid fa-image"></i>
+                            Photo/Video
+                        </label>
+                        <input type="file" name="file" id="file">
+                        <button name="createBtnPost">Create Post</button>
+                        </form>
+                    </div>
+                </div>
               
                 <div class='card-container'>
                     <div class='card'>
@@ -396,7 +450,7 @@
               
                 <div class="list-buying" style="display: flex; gap: 15px;">
                     <div class="image-market-sell">
-                        <img src="uploads/bmwblue.jpg" alt="image error" width="250px" height="220px" style="border-radius: 7px;">
+                        <img src="uploads/bmwblue.jpg" alt="image error" width="200px" height="200px" style="border-radius: 7px;">
                         <h4>PHP 500,000</h4>
                         <p>car bmw blue</p>
                         <p>manila</p>
@@ -404,7 +458,7 @@
     
                     
                     <div class="image-market-sell">
-                        <img src="uploads/teslacar.jpg" alt="image error" width="250px" height="220px" style="border-radius: 7px;">
+                        <img src="uploads/teslacar.jpg" alt="image error" width="200px" height="200px" style="border-radius: 7px;">
                         <h4>PHP 3,500,000</h4>
                         <p>tesl car</p>
                         <p>bgc</p>
@@ -412,7 +466,7 @@
     
                     
                     <div class="image-market-sell">
-                        <img src="uploads/sportcar.png" alt="image error" width="250px" height="220px" style="border-radius: 7px;">
+                        <img src="uploads/sportcar.png" alt="image error" width="200px" height="200px" style="border-radius: 7px;">
                         <h4>PHP 350,000</h4>
                         <p>car modified</p>
                         <p>quezon city</p>
@@ -420,7 +474,7 @@
     
                     
                     <div class="image-market-sell">
-                        <img src="uploads/kawasakisportbike(1).jpg" alt="image error" width="250px" height="220px" style="border-radius: 7px;">
+                        <img src="uploads/kawasakisportbike(1).jpg" alt="image error" width="200px" height="200px" style="border-radius: 7px;">
                         <h4>PHP 1,000,000</h4>
                         <p>kawasaki sport bike</p>
                         <p>makati</p>
@@ -717,6 +771,119 @@ ul .icon:hover{
     overflow:auto;
 }
 
+ /* <<<<<<<<<<<<<<<<<<<<<<<<<<<<<   INSERT DATA    >>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>  */
+ 
+ .post{
+        padding:50px 30px;
+        display: none;
+        justify-content: center;
+        align-items: center;
+        margin-top: 10px;
+        box-shadow: rgba(0, 0, 0, 0.1) 0px 10px 15px -3px, rgba(0, 0, 0, 0.05) 0px 4px 6px -2px;
+        border-radius: 5px;
+       z-index: 100;
+       
+       position: relative;
+       background-color: white;
+    }
+    .btn-post-close{
+        position: absolute;
+        top: 5px;
+        right: 5px;
+        cursor: pointer;
+        background-color: rgba(160, 42, 42, 0.726);
+        border-radius: 50%;
+        color: white;
+        padding:3px;
+    }
+    .postShow{
+    display: flex;
+ }
+
+   .post .postWrapper{
+        display: flex;
+        justify-content: center;
+        align-items: center;
+
+   }
+   .postWrapper > form{
+        display: flex;
+        flex-direction: column;
+        justify-content: center;
+        align-items: center;
+        width: 100%;
+        cursor: pointer;
+        gap: 10px;
+   }
+   form #title{
+    width: 100%;
+    padding: 5px;
+    border: none;
+    cursor: pointer;
+    transition: 0.5s;
+   }
+     form > #title:hover{
+    border-bottom: 1px solid  rgb(91, 91, 91);
+
+   }
+   form > textarea{
+     width: 100%;
+    padding: 5px;
+    border: none;
+    cursor: pointer;
+    transition: 0.5s;
+   }
+     form > textarea:hover{
+        border-bottom: 1px solid  rgb(91, 91, 91);
+
+   }
+   form > label{
+    
+    /* color: white; */
+    padding: 3px;
+    cursor: pointer;
+    margin: 5px 5px;
+    transition: 0.5s;
+   }
+   form > label:hover{
+    
+    background-color:rgb(26, 173, 26);
+    /* color: white; */
+    border-radius: 3px;
+   }
+   label > i{
+     color: rgb(26, 173, 26);
+   }
+    label > i:hover{
+     color: white;
+   }
+   form > #file{
+    display: none;
+   }
+
+               
+
+             /* <<<<<<<<<<<<<<<<<<<<<<<
+                            BUTTON POST CONTENT
+                       >>>>>>>>>>>>>>>>>>>>>>> */
+
+   .btn-post{
+    box-shadow: rgba(99, 99, 99, 0.2) 0px 2px 8px 0px;
+    border-radius: 10px;
+    margin-top: 10px;
+    display: flex;
+    flex-direction: column;
+
+   }
+  .ul-post > li{
+    transition: 0.5s;
+  }
+  .ul-post > li:hover{
+    background-color: #ddd8d8;
+    border-radius: 5px;
+  }
+
+
              /* <<<<<<<<<<<<<<<<<<<<<<<
                           MODAL STYLE
                        >>>>>>>>>>>>>>>>>>>>>>> */
@@ -792,7 +959,7 @@ rightReel{
 
 .wrapper-market-place{
     display: grid;
-    grid-template-columns: 400px 2fr;
+    grid-template-columns: auto 1fr;
     grid-template-columns: auto 1fr;
     grid-template-areas: "left-market-place right-market-place";
     width: 100%;
@@ -800,12 +967,16 @@ rightReel{
 }
 .left-market-place{
     grid-area: left-market-place ;
-    padding: 100px;
+    padding: 130px;
     box-shadow: rgba(0, 0, 0, 0.15) 1.95px 1.95px 2.6px;
 
 }
 .right-market-place{
     grid-area: right-market-place;
+    display: flex;
+    flex-direction: column;
+    flex-wrap: wrap;
+
  
 }
 .list-market > li{
@@ -893,12 +1064,13 @@ rightReel{
                        >>>>>>>>>>>>>>>>>>>>>>> */
         @media (max-width: 499px) and (min-width: 320px)
         {
-            section{
+            body{
                 display: grid;
                 grid-template-columns:1fr;
-                grid-template-rows:auto 1fr;
+                grid-template-rows: auto 1fr auto;
                 grid-template-areas: "main";
             }
+            
             header{
             background-color: none;
             padding: 5px;

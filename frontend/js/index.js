@@ -124,3 +124,23 @@ userLists.forEach((user)=> {
 
 });
 
+
+
+//  POP UP SHOW POST FORM 
+const btnPostPopup = document.querySelector("#btn-post-popup");
+
+btnPostPopup.addEventListener("click", ()=> {
+    const post = document.querySelector("#post");
+    post.classList.add("postShow");
+
+    const btnPost = document.querySelector("#btn-post");
+    btnPost.style.display="none";
+});
+
+//  CLOSE BOTTON  HIDDEN POST FORM 
+const btnPostClose = document.querySelector("#btn-post-close");
+btnPostClose.addEventListener("click", ()=> {
+    post.classList.remove("postShow");
+    const btnPost = document.querySelector("#btn-post");
+    btnPost.style.display="flex";
+})
